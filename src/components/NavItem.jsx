@@ -1,4 +1,4 @@
-import styles from "../styles/NavItem.module.scss";
+import styles from "../styles/components/NavItem.module.scss";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
