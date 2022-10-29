@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Futura/static/css/main.395c79c2.css",
-    "main.js": "/Futura/static/js/main.2c307bc1.js",
+    "main.css": "/Futura/static/css/main.cb4c6e15.css",
+    "main.js": "/Futura/static/js/main.9f52dd6f.js",
     "static/media/foot.svg": "/Futura/static/media/foot.51f9552bf15db6e949ac.svg",
     "static/media/rocket.svg": "/Futura/static/media/rocket.36f5f56b60590db67169724422ffc77d.svg",
     "static/media/brand4.svg": "/Futura/static/media/brand4.30c0519cda8a93802b363c778cedf96e.svg",
@@ -11,12 +11,17 @@
     "static/media/brand3.svg": "/Futura/static/media/brand3.f1546a704ec69d9d7b9dd00e75d913c4.svg",
     "static/media/brand2.svg": "/Futura/static/media/brand2.3cf5328687bfdee260dc91433ed76b7b.svg",
     "static/media/brand1.svg": "/Futura/static/media/brand1.ea4bc88e9713aace47dd239bae47fc4d.svg",
+    "static/media/footerImage.svg": "/Futura/static/media/footerImage.322b8a5d8a18c56e3d46594d180a7709.svg",
+    "static/media/whatsapp.svg": "/Futura/static/media/whatsapp.3909524b3beac30c051d30085d28ae5e.svg",
+    "static/media/instagram.svg": "/Futura/static/media/instagram.eecdb5e7e70d0f79cb6eb79161a07baf.svg",
+    "static/media/facebook.svg": "/Futura/static/media/facebook.87ff0f144174bf97ce27952629a04610.svg",
+    "static/media/twitter.svg": "/Futura/static/media/twitter.12c8970107bc319bc56fa5c6a29c4bce.svg",
     "index.html": "/Futura/index.html",
-    "main.395c79c2.css.map": "/Futura/static/css/main.395c79c2.css.map",
-    "main.2c307bc1.js.map": "/Futura/static/js/main.2c307bc1.js.map"
+    "main.cb4c6e15.css.map": "/Futura/static/css/main.cb4c6e15.css.map",
+    "main.9f52dd6f.js.map": "/Futura/static/js/main.9f52dd6f.js.map"
   },
   "entrypoints": [
-    "static/css/main.395c79c2.css",
-    "static/js/main.2c307bc1.js"
+    "static/css/main.cb4c6e15.css",
+    "static/js/main.9f52dd6f.js"
   ]
 }
