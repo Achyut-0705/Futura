@@ -5,6 +5,8 @@ import brand2 from "../images/brands/brand2.svg";
 import brand3 from "../images/brands/brand3.svg";
 import brand4 from "../images/brands/brand4.svg";
 import CustomerCard from "../components/CustomerCard";
+import footerImage from "../images/footerImage.svg";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -68,6 +70,27 @@ function Home() {
           <CustomerCard />
         </div>
       </section>
+
+      <section className={styles.lastFrame}>
+        <div className={styles.lastLeft}>
+          <img src={footerImage} alt="footer ka kuch toh" />
+        </div>
+        <div className={styles.lastRight}>
+          <h1>
+            <span>NURTURING</span> NEW BRANDS
+          </h1>
+          <h2>SIMPLEX</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus suscipit velit exercitationem possimus asperiores
+            voluptatem nihil, iste sit porro modi tenetur, expedita sint iusto
+            similique ratione fugiat sequi voluptatibus. Iste commodi fugit
+            autem aliquid, incidunt voluptatem dolorem, dicta architecto et nemo
+            ducimus enim repellendus quam rerum! Doloribus placeat incidunt qui.
+          </p>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 }
