@@ -18,8 +18,16 @@
 }
 
 .left {
+  & > h1,
+  & > h2 {
+    font-family: "Pathway Gothic One", sans-serif;
+  }
   & > h2 {
     font-weight: normal;
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 3em;
   }
 }
 
@@ -44,7 +52,7 @@
 
   h1 {
     text-align: center;
-    font-family: "Pathway Gothic One";
+    font-family: "Pathway Gothic One", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 70px;
@@ -79,7 +87,7 @@
 
   h1 {
     text-align: center;
-    font-family: "Pathway Gothic One";
+    font-family: "Pathway Gothic One", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 70px;
@@ -108,7 +116,7 @@
 
   h1 {
     text-align: center;
-    font-family: "Pathway Gothic One";
+    font-family: "Pathway Gothic One", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 70px;

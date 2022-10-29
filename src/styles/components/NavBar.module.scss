@@ -1,7 +1,7 @@
+@import "../../mixins/global.scss";
+
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between, center);
   // gap: 1.5rem;
   padding: 3rem 15rem;
   height: 3rem;
@@ -25,24 +25,4 @@
   @media (max-width: 768px) {
     padding: 3rem;
   }
-}
-
-.hamburger {
-  display: none;
-
-  @media only screen and (max-width: 512px) {
-    display: block;
-    // font-size: 2rem;
-    cursor: pointer;
-  }
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: white;
 }

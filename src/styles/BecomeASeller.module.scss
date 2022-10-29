@@ -1,0 +1,38 @@
+.container {
+  background-image: url("../images/becomeSellerBg.svg");
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  h2 {
+    letter-spacing: 0.215em;
+    font-size: 3em;
+
+    span {
+      color: rgba(198, 2, 92, 1);
+    }
+  }
+}
+
+.futura {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 10em;
+    text-transform: uppercase;
+    font-family: "Pathway Gothic One", sans-serif;
+    letter-spacing: 0.1em;
+  }
+
+  & > img {
+    width: 30%;
+  }
+}
