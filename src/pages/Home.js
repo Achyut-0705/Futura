@@ -4,6 +4,7 @@ import brand1 from "../images/brands/brand1.svg";
 import brand2 from "../images/brands/brand2.svg";
 import brand3 from "../images/brands/brand3.svg";
 import brand4 from "../images/brands/brand4.svg";
+import CustomerCard from "../components/CustomerCard";
 
 function Home() {
   return (
@@ -27,7 +28,7 @@ function Home() {
         </div>
       </div>
 
-      <div className={styles.brands}>
+      <section className={styles.brands}>
         <h1>
           OUTSHINING <span>BRANDS</span>
         </h1>
@@ -45,7 +46,28 @@ function Home() {
             <img src={brand4} alt="brand1" />
           </div>
         </div>
-      </div>
+
+        <CTA
+          style={{
+            background: "#F73D93",
+            color: "white",
+            width: "25%",
+          }}
+          text="BROWSE NEW BRANDS"
+        />
+      </section>
+
+      <section className={styles.products}>
+        <h1>
+          <span>CUSTOMERS</span> LOVE IT!
+        </h1>
+        <div className={styles.productList}>
+          <CustomerCard />
+          <CustomerCard />
+          <CustomerCard />
+          <CustomerCard />
+        </div>
+      </section>
     </>
   );
 }
