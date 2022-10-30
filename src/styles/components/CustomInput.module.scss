@@ -14,9 +14,11 @@
 
   input::placeholder {
     color: #ccc;
+    // text-transform: capitalize;
   }
 
   label {
     font-size: 1.28em;
+    text-transform: capitalize;
   }
 }

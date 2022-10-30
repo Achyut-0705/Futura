@@ -65,7 +65,8 @@ function Login() {
             type="submit"
           />
           <p>
-            Not A Member? Click Here To <Link to="/">Register</Link>
+            Not A Member? Click Here To{" "}
+            <Link to="/seller/register">Register</Link>
           </p>
         </form>
       </div>
