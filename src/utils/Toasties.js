@@ -40,3 +40,16 @@ export const warning = (message) => {
     theme: "dark",
   });
 };
+
+export const info = (message) => {
+  return toast.info(message, {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+  });
+};

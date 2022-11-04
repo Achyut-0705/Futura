@@ -2,14 +2,20 @@ import CustomInput from "../components/CustomInput";
 import styles from "../styles/Login.module.scss";
 import CTA from "../components/CTA";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { error, success } from "../utils/Toasties";
-import { ToastContainer } from "react-toastify";
 import instance from "../utils/axios";
 
 function Login() {
+  if (localStorage.getItem("token")) {
+    localStorage.removeItem("token");
+  }
+  if (localStorage.getItem("is_admin")) {
+    localStorage.removeItem("is_admin");
+  }
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email === "" || password === "") {
@@ -26,6 +32,7 @@ function Login() {
       success("Login successful");
       localStorage.setItem("token", token);
       localStorage.setItem("is_admin", is_admin);
+      navigate("/seller/home");
     } catch (err) {
       if (err.message === "timeout of 3000ms exceeded") {
         error("Network error");
@@ -70,7 +77,6 @@ function Login() {
           </p>
         </form>
       </div>
-      <ToastContainer />
     </>
   );
 }

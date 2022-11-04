@@ -5,23 +5,34 @@ import { useLocation } from "react-router-dom";
 
 function NavBar() {
   const { pathname } = useLocation();
+  const token = localStorage.getItem("token");
   return (
     <nav className={styles.container}>
       <div className={styles.logoWrapper}>
         <img src={Logo} alt="logo" />
       </div>
       <ul>
-        <NavItem title="Home" link="/" isActive={pathname === "/"} />
-        <NavItem
-          title="About"
-          link="/about"
-          isActive={pathname.search("/about") !== -1}
-        />
-        <NavItem
-          title="Seller"
-          link="/seller"
-          isActive={pathname.search("/seller") !== -1}
-        />
+        {!token ? (
+          <>
+            <NavItem title="Home" link="/" isActive={pathname === "/"} />
+            <NavItem
+              title="About"
+              link="/about"
+              isActive={pathname.search("/about") !== -1}
+            />
+            <NavItem
+              title="Seller"
+              link="/seller"
+              isActive={pathname.search("/seller") !== -1}
+            />
+          </>
+        ) : (
+          <NavItem
+            title="Preview your landing page"
+            link="/seller/preview"
+            isActive={pathname.search("/seller") !== -1}
+          />
+        )}
       </ul>
     </nav>
   );

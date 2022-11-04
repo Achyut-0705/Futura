@@ -4,7 +4,6 @@ import uploadIcon from "../images/uploadIcon.svg";
 import CustomInput from "../components/CustomInput";
 import CTA from "../components/CTA";
 import { error } from "../utils/Toasties";
-import { ToastContainer } from "react-toastify";
 // import instance from "../utils/axios";
 
 function Register() {
@@ -139,7 +138,6 @@ function Register() {
           </form>
         </div>
       </div>
-      <ToastContainer />
     </>
   );
 }
