@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Futura/static/css/main.59e78b91.css",
-    "main.js": "/Futura/static/js/main.51239d4c.js",
+    "main.css": "/Futura/static/css/main.e1f64cba.css",
+    "main.js": "/Futura/static/js/main.e04e0d91.js",
     "static/media/foot.svg": "/Futura/static/media/foot.51f9552bf15db6e949ac.svg",
     "static/media/loginBackground.svg": "/Futura/static/media/loginBackground.36485c37dde0d7af879e.svg",
     "static/media/rocket.svg": "/Futura/static/media/rocket.36f5f56b60590db67169724422ffc77d.svg",
@@ -9,21 +9,25 @@
     "static/media/background.svg": "/Futura/static/media/background.0a340db383f5ed0b32bd.svg",
     "static/media/customerImage.svg": "/Futura/static/media/customerImage.f38a447a8138e72ea5ac0787633118a8.svg",
     "static/media/Logo.svg": "/Futura/static/media/Logo.7bf5336a4e50c91c92cb577d0cab377a.svg",
+    "static/media/productItem.svg": "/Futura/static/media/productItem.deacb6da13217d50684d7b8f2cdceb0f.svg",
     "static/media/brand3.svg": "/Futura/static/media/brand3.f1546a704ec69d9d7b9dd00e75d913c4.svg",
     "static/media/brand2.svg": "/Futura/static/media/brand2.3cf5328687bfdee260dc91433ed76b7b.svg",
+    "static/media/defaultBrandLogo.svg": "/Futura/static/media/defaultBrandLogo.bd437fb9846fc8354c7993d0e451d80c.svg",
     "static/media/brand1.svg": "/Futura/static/media/brand1.ea4bc88e9713aace47dd239bae47fc4d.svg",
     "static/media/footerImage.svg": "/Futura/static/media/footerImage.322b8a5d8a18c56e3d46594d180a7709.svg",
     "static/media/whatsapp.svg": "/Futura/static/media/whatsapp.3909524b3beac30c051d30085d28ae5e.svg",
     "static/media/instagram.svg": "/Futura/static/media/instagram.eecdb5e7e70d0f79cb6eb79161a07baf.svg",
     "static/media/facebook.svg": "/Futura/static/media/facebook.87ff0f144174bf97ce27952629a04610.svg",
     "static/media/twitter.svg": "/Futura/static/media/twitter.12c8970107bc319bc56fa5c6a29c4bce.svg",
+    "static/media/addProductBg.svg": "/Futura/static/media/addProductBg.36daf22ea006c5242c45.svg",
     "static/media/uploadIcon.svg": "/Futura/static/media/uploadIcon.9423547b2b366547a6d9c156a01a5b6b.svg",
+    "static/media/sellerHomeBg.svg": "/Futura/static/media/sellerHomeBg.77026165ea35ccee01c0.svg",
     "index.html": "/Futura/index.html",
-    "main.59e78b91.css.map": "/Futura/static/css/main.59e78b91.css.map",
-    "main.51239d4c.js.map": "/Futura/static/js/main.51239d4c.js.map"
+    "main.e1f64cba.css.map": "/Futura/static/css/main.e1f64cba.css.map",
+    "main.e04e0d91.js.map": "/Futura/static/js/main.e04e0d91.js.map"
   },
   "entrypoints": [
-    "static/css/main.59e78b91.css",
-    "static/js/main.51239d4c.js"
+    "static/css/main.e1f64cba.css",
+    "static/js/main.e04e0d91.js"
   ]
 }
