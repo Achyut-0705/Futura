@@ -8,27 +8,34 @@ import CustomerCard from "../components/CustomerCard";
 import footerImage from "../images/footerImage.svg";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import rocketImage from "../images/logoRocket.svg";
 
 function Home() {
   const navigate = useNavigate();
   return (
     <>
       <div className={styles.container}>
+        <div className={styles.top}>
+          <h1>F</h1>
+          <img src={rocketImage} alt="u for futura" />
+          <h1>TURA</h1>
+        </div>
         <div className={styles.content}>
           <div className={styles.left}>
             <h1>
               Empowering Brands Nationwide. Fueling The
               <br /> Future.
             </h1>
-            <h2>
-              India's Only Space For All <b>Indie Brands </b>To <br />
-              Flourish. Find <b>Top-Notch </b>Products Made <br />
-              In India To Suit <b>Just What You Need!</b>
-            </h2>
+            <p>
+              India's Only Space For All <b> Indie Brands </b>To <br />
+              Flourish. Find<b> Top-Notch</b> Products Made <br />
+              In India To Suit<b> Just What You Need!</b>
+            </p>
           </div>
           <div className={styles.right}>
             <CTA
               text="explore"
+              style={{ width: "20rem" }}
               onClick={() =>
                 navigate("/explore", { state: { activeState: "products" } })
               }

@@ -1,41 +1,53 @@
+@import "../mixins/global.scss";
+
 .container {
   background-image: url("../images/background.svg");
   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh;
+  // gap: 3rem;
+  padding: 3rem;
 
+  @include flex(column, center, center);
   position: relative;
+
+  .top {
+    @include flex($align: center);
+    width: 100%;
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    // padding: 10rem;
+
+    h1 {
+      font-family: "Pathway Gothic One", sans-serif;
+      font-size: 20em;
+      letter-spacing: 0.1em;
+    }
+
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
 }
 
 .content {
-  position: absolute;
-  top: 58%;
-  left: 20%;
-
-  display: flex;
-  align-items: flex-start;
-
+  @include flex(row, space-evenly, center);
   width: 100%;
 }
 
 .left {
-  & > h1,
-  & > h2 {
-    font-family: "Pathway Gothic One", sans-serif;
-  }
-  & > h2 {
-    font-weight: normal;
-    font-size: 2em;
-  }
   h1 {
-    font-size: 3em;
+    all: unset;
+    font-size: 2.8em;
+    font-weight: 700;
   }
-}
 
-.right {
-  width: 20%;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
+  p {
+    font-size: 1.8em;
+    font-weight: 100;
+    line-height: 1.5em;
+  }
 }
 
 .brands {
