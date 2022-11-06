@@ -26,3 +26,8 @@
     padding: 3rem;
   }
 }
+
+.btnWrapper {
+  @include flex(row, space-evenly, center);
+  gap: 2rem;
+}

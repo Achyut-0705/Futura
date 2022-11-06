@@ -7,8 +7,10 @@ import brand4 from "../images/brands/brand4.svg";
 import CustomerCard from "../components/CustomerCard";
 import footerImage from "../images/footerImage.svg";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles.container}>
@@ -25,7 +27,7 @@ function Home() {
             </h2>
           </div>
           <div className={styles.right}>
-            <CTA text="explore" />
+            <CTA text="explore" onClick={() => navigate("/explore")} />
           </div>
         </div>
       </div>

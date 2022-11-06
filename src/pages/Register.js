@@ -3,8 +3,8 @@ import styles from "../styles/Register.module.scss";
 import uploadIcon from "../images/uploadIcon.svg";
 import CustomInput from "../components/CustomInput";
 import CTA from "../components/CTA";
-import { error } from "../utils/Toasties";
-// import instance from "../utils/axios";
+import { error, info, success } from "../utils/Toasties";
+import instance from "../utils/axios";
 
 function Register() {
   const [logo, setLogo] = useState(null);
@@ -13,7 +13,10 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [description, setDescription] = useState("");
+  const [address, setAddress] = useState("");
+  const [banner, setBanner] = useState("");
   const inputRef = useRef(null);
+  const bannerRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +40,10 @@ function Register() {
       error("Please confirm your password");
       return;
     }
+    if (address === "") {
+      error("Please enter an address");
+      return;
+    }
     if (password !== confirmPassword) {
       error("Passwords do not match");
       return;
@@ -45,13 +52,38 @@ function Register() {
       error("Please enter a description");
       return;
     }
+    if (!banner) {
+      error("Please upload a banner");
+      return;
+    }
+
+    info("Registering...");
 
     const myFormData = new FormData();
     myFormData.append("logo", logo);
-    myFormData.append("brand_name", brandName);
+    myFormData.append("name", brandName);
     myFormData.append("email", email);
     myFormData.append("password", password);
     myFormData.append("description", description);
+    myFormData.append("address", address);
+    myFormData.append("banner", banner);
+
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    };
+
+    instance
+      .post("/company", myFormData, config)
+      .then((res) => {
+        // console.log(res);
+        success("Registered successfully");
+      })
+      .catch((err) => {
+        // console.log(err);
+        error(err.response.data.message);
+      });
   };
   return (
     <>
@@ -113,7 +145,13 @@ function Register() {
               />
             </div>
             <div className={styles.rightForm}>
-              {/* <CustomInput /> */}
+              <CustomInput
+                label="Address"
+                placeholder="xyz street, abc city, 123456"
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
               <div className={styles.textAreaWrapper}>
                 <label>Description</label>
                 <textarea
@@ -123,6 +161,18 @@ function Register() {
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
+              <div
+                className={styles.bannerInputWrapper}
+                onClick={(e) => bannerRef.current.click()}
+              >
+                <label>{banner ? banner.name : "Upload Banner"}</label>
+                <input
+                  type="file"
+                  ref={bannerRef}
+                  onChange={(e) => setBanner(e.target.files[0])}
+                />
+              </div>
+
               <CTA
                 text="submit"
                 style={{
@@ -130,7 +180,7 @@ function Register() {
                   color: "white",
                   height: "12%",
                   fontSize: "1.5em",
-                  padding: "0",
+                  // padding: "0",
                 }}
                 type="submit"
               />

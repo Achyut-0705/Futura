@@ -1,15 +1,17 @@
 import styles from "../styles/components/NavBar.module.scss";
 import NavItem from "./NavItem";
 import Logo from "../images/Logo.svg";
-import { useLocation } from "react-router-dom";
+// import CTA from "./CTA";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function NavBar() {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const token = localStorage.getItem("token");
   return (
     <nav className={styles.container}>
       <div className={styles.logoWrapper}>
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo" onClick={() => navigate("/")} />
       </div>
       <ul>
         {!token ? (
@@ -27,11 +29,23 @@ function NavBar() {
             />
           </>
         ) : (
-          <NavItem
-            title="Preview your landing page"
-            link="/seller/preview"
-            isActive={pathname.search("/seller") !== -1}
-          />
+          <div className={styles.btnWrapper}>
+            <NavItem
+              title="Home"
+              link="/seller/home"
+              isActive={pathname.search("/home") !== -1}
+            />
+            <NavItem
+              title="Preview your landing page"
+              link="/seller/preview"
+              isActive={pathname.search("/seller/preview") !== -1}
+            />
+            <NavItem
+              title="Logout"
+              link="/logout"
+              isActive={pathname.search("/logout") !== -1}
+            />
+          </div>
         )}
       </ul>
     </nav>

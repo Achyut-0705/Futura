@@ -7,6 +7,8 @@ import Error404 from "./pages/Error404";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import SellerHome from "./pages/seller/Home";
+import Logout from "./pages/Logout";
+import Explore from "./pages/Explore";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import { ToastContainer } from "react-toastify";
 
@@ -17,13 +19,21 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="seller">
           <Route path="" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
+
+        <Route element={<ProtectedRoutes />}>
+          <Route path="logout" element={<Logout />} />
+        </Route>
+
         <Route path="seller" element={<ProtectedRoutes />}>
           <Route path="home" element={<SellerHome />} />
         </Route>
+
+        <Route path="/explore" element={<Explore />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>

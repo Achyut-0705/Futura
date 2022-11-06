@@ -1,0 +1,54 @@
+@import "../../mixins/global.scss";
+
+.addProduct {
+  background: url("../../images/addProductBg.svg") no-repeat;
+  //   background: url("../images/addProductBg.svg") no-repeat;
+  background-position: -50%;
+  height: 100%;
+  // width: 20vw;
+  @include flex($align: center, $justify: space-evenly);
+  gap: 3rem;
+  padding: 3rem;
+
+  .top {
+    background: linear-gradient(91.93deg, #7801e4 24.35%, #b602c6 96.96%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px 24px 0px 0px;
+    width: 22vw;
+    height: 20vh;
+    position: relative;
+
+    .input {
+      position: absolute;
+      top: 60%;
+      left: 30%;
+      border-radius: 50%;
+      background: rgb(22, 0, 59);
+      height: 150px;
+      width: 150px;
+      @include flexCenter(column);
+      cursor: pointer;
+
+      input {
+        display: none;
+      }
+
+      img {
+        width: 40%;
+      }
+
+      span {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .bottom {
+    background: linear-gradient(149.27deg, #cacced 73.37%, #16003b 170.61%);
+    border-radius: 0px 0px 24px 24px;
+    height: 45vh;
+    @include flexCenter(column);
+    padding: 2rem;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../mixins/global.scss";
+
+.container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.2fr));
+  place-items: center;
+  place-content: center;
+  //   grid-template-columns: repeat(4);
+  gap: 2rem;
+  padding: 2rem;
+}

@@ -3,6 +3,7 @@
 .container {
   @include flex(row, space-between, center);
   gap: 0.5rem;
+  // width: 100%;
 
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
