@@ -96,13 +96,14 @@ function ViewProducts({ type = "remove", dataList = products }) {
   return (
     <div className={styles.container}>
       {data && data.length > 0 ? (
-        data.map(({ name, imageURL, description, price }, index) => (
+        data.map(({ name, imageURL, description, price, id }, index) => (
           <ProductCard
             name={name}
             description={description}
             price={price}
             type={type}
             key={index}
+            id={id}
             image={imageURL}
           />
         ))
