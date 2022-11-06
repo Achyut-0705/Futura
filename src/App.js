@@ -11,6 +11,7 @@ import Logout from "./pages/Logout";
 import Explore from "./pages/Explore";
 import Brand from "./pages/Brand";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import About from "./pages/About";
 import { ToastContainer } from "react-toastify";
 // import CompanyPreview from "./pages/CompanyPreview";
 
@@ -39,6 +40,7 @@ function App() {
         {/* <Route path="/company/preview" element={<CompanyPreview />} /> */}
 
         <Route path="/brand" element={<Brand />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>

@@ -1,0 +1,27 @@
+@import "../mixins/global.scss";
+
+.container {
+  height: 100%;
+  width: 100%;
+  @include flex(column, top, center);
+  padding: 2rem;
+  gap: 2rem;
+
+  h1 {
+    all: unset;
+    font-size: 4rem;
+  }
+
+  ul {
+    background-color: rgba(109, 109, 109, 0.616);
+    width: 40%;
+    padding: 1rem;
+    border-radius: 1rem;
+    @include flexCenter(column);
+    gap: 1rem;
+
+    li {
+      font-size: 1.2em;
+    }
+  }
+}
