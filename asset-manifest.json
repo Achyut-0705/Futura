@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Futura/static/css/main.e309c239.css",
-    "main.js": "/Futura/static/js/main.9c053147.js",
+    "main.css": "/Futura/static/css/main.782b189a.css",
+    "main.js": "/Futura/static/js/main.cf321359.js",
     "static/media/foot.svg": "/Futura/static/media/foot.51f9552bf15db6e949ac.svg",
     "static/media/loginBackground.svg": "/Futura/static/media/loginBackground.36485c37dde0d7af879e.svg",
     "static/media/rocket.svg": "/Futura/static/media/rocket.36f5f56b60590db67169724422ffc77d.svg",
@@ -23,11 +23,11 @@
     "static/media/uploadIcon.svg": "/Futura/static/media/uploadIcon.9423547b2b366547a6d9c156a01a5b6b.svg",
     "static/media/sellerHomeBg.svg": "/Futura/static/media/sellerHomeBg.77026165ea35ccee01c0.svg",
     "index.html": "/Futura/index.html",
-    "main.e309c239.css.map": "/Futura/static/css/main.e309c239.css.map",
-    "main.9c053147.js.map": "/Futura/static/js/main.9c053147.js.map"
+    "main.782b189a.css.map": "/Futura/static/css/main.782b189a.css.map",
+    "main.cf321359.js.map": "/Futura/static/js/main.cf321359.js.map"
   },
   "entrypoints": [
-    "static/css/main.e309c239.css",
-    "static/js/main.9c053147.js"
+    "static/css/main.782b189a.css",
+    "static/js/main.cf321359.js"
   ]
 }
