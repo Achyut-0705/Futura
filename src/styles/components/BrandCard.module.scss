@@ -13,6 +13,7 @@
   & > h1 {
     font-size: 1.5em;
     text-align: center;
+    text-transform: capitalize;
   }
 
   & > p {
@@ -22,4 +23,11 @@
 
 .imageContainer {
   width: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
 }

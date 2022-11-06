@@ -2,17 +2,18 @@ import styles from "../styles/components/BrandCard.module.scss";
 import brandLogo from "../images/defaultBrandLogo.svg";
 import CTA from "./CTA";
 
-function BrandCard() {
+function BrandCard({
+  name = "DARJEELING TEA & CO",
+  description = "Darjeeling Tea & Co. is a tea company based in Darjeeling, India. We are a family owned business that has been in the tea industry for over 100 years. We are passionate about tea and we are committed to providing the best quality tea to our customers.",
+  logo = brandLogo,
+}) {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <img src={brandLogo} alt="Brand Logo" />
+        <img src={logo} alt="Brand Logo" />
       </div>
-      <h1>DARJEELING TEA & CO</h1>
-      <p>
-        India's Only Tea Which Gurantees The Freshness of Freshly Pluched Tea
-        Leaves. Darjeeling Tea Brings You the Chai That Will ...
-      </p>
+      <h1>{name}</h1>
+      <p>{description}</p>
       <CTA
         text="explore"
         style={{

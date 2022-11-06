@@ -12,7 +12,14 @@ function ViewBrands({ dataList = [] }) {
   return (
     <div className={styles.container}>
       {data.length > 0 ? (
-        data.map((item) => <BrandCard key={item.id} data={item} />)
+        data.map(({ id, name, description, logoURL }) => (
+          <BrandCard
+            key={id}
+            name={name}
+            description={description}
+            logo={logoURL}
+          />
+        ))
       ) : (
         <h1>No Brands</h1>
       )}
