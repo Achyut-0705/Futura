@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import instance from "../utils/axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import { error } from "../utils/Toasties";
 
 function Brand({ companyId = 1 }) {
   const [products, setProducts] = useState([]);
@@ -23,9 +24,8 @@ function Brand({ companyId = 1 }) {
         const products = await instance.get(`/product/company/${id}`);
         setCompany(company.data.company);
         setProducts(products.data.products);
-        console.log(company.data.company);
       } catch (err) {
-        console.log(err);
+        error(err.response.data.message);
       }
     };
 
@@ -51,12 +51,6 @@ function Brand({ companyId = 1 }) {
             Back To The Mountains Of Darjeeling. Find Top-Notch Products Made In
             India Ethically To Start Your Morning Just The Way You Want!`}
           </p>
-          {/* <p>
-            India's Only Tea Which Gurantees The Freshness of Freshly Pluched
-            Tea Leaves. Darjeeling Tea Brings You the Chai That Will Take You
-            Back To The Mountains Of Darjeeling. Find Top-Notch Products Made In
-            India Ethically To Start Your Morning Just The Way You Want!
-          </p> */}
           <CTA
             text="EXPLORE ON THE SHOP"
             style={{

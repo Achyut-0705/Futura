@@ -17,10 +17,8 @@ function ProductCard({
     const deleteProduct = async () => {
       try {
         await instance.delete(`/product/${id}`);
-        // console.log(response);
         success("Product deleted successfully");
       } catch (err) {
-        // console.log(error);
         error("Error deleting product");
       }
     };

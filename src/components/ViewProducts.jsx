@@ -90,7 +90,6 @@ function ViewProducts({ type = "remove", dataList = products }) {
 
   useEffect(() => {
     setData(dataList);
-    // console.log(dataList);
   }, [dataList]);
 
   return (
@@ -101,7 +100,7 @@ function ViewProducts({ type = "remove", dataList = products }) {
             name={name}
             description={description}
             price={price}
-            type={type}
+            type={localStorage.getItem("token") ? type : "view"}
             key={index}
             id={id}
             image={imageURL}

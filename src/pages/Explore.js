@@ -5,6 +5,7 @@ import ViewProducts from "../components/ViewProducts";
 import ViewBrands from "../components/ViewBrands";
 import instance from "../utils/axios";
 import { useLocation } from "react-router-dom";
+import { error } from "../utils/Toasties";
 
 function Explore() {
   const location = useLocation();
@@ -12,20 +13,22 @@ function Explore() {
     location.state?.activeState || "brands"
   );
 
-  console.log(location.state.activeState);
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = activeBtn === "brands" ? "/company" : "/product";
+    const url =
+      activeBtn === "brands" ? "/company/status/accepted" : "/product";
     instance
       .get(url)
       .then((res) => {
         setData(
-          activeBtn === "brands" ? res.data.companies : res.data.products
+          activeBtn === "brands"
+            ? res.data.companies.rows
+            : res.data.products.rows
         );
       })
       .catch((err) => {
-        console.log(err);
+        error(err.response.data.message);
       });
   }, [activeBtn]);
 

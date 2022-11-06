@@ -44,7 +44,6 @@ function Login() {
         return;
       }
       error("Invalid credentials");
-      console.log(err);
     }
   };
   return (

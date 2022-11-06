@@ -77,11 +77,9 @@ function Register() {
     instance
       .post("/company", myFormData, config)
       .then((res) => {
-        // console.log(res);
         success("Registered successfully");
       })
       .catch((err) => {
-        // console.log(err);
         error(err.response.data.message);
       });
   };

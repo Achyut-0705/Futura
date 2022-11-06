@@ -80,10 +80,8 @@ function Home() {
       try {
         const res = await instance.get("/company/token/company");
         setCompany(res.data.company);
-        console.log(res.data.company);
       } catch (err) {
         error(err.message);
-        // console.log(err);
       }
     };
     getCompanyData();
@@ -95,10 +93,8 @@ function Home() {
       try {
         const res = await instance.get(`/product/company/${company.id}`);
         setProducts(res.data.products);
-        // console.log(res.data.products);
       } catch (err) {
-        // error(err.message);
-        console.log(err);
+        error(err.message);
       }
     };
     getProducts();
