@@ -8,4 +8,9 @@
   //   grid-template-columns: repeat(4);
   gap: 2rem;
   padding: 2rem;
+
+  & > h1 {
+    all: unset;
+    font-size: 2em;
+  }
 }

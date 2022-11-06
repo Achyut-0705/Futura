@@ -18,6 +18,7 @@ function ViewBrands({ dataList = [] }) {
             name={name}
             description={description}
             logo={logoURL}
+            id={id}
           />
         ))
       ) : (

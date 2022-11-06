@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/components/ViewProducts.module.scss";
 import ProductCard from "./ProductCard";
 
@@ -91,22 +90,25 @@ function ViewProducts({ type = "remove", dataList = products }) {
 
   useEffect(() => {
     setData(dataList);
-    console.log(dataList);
+    // console.log(dataList);
   }, [dataList]);
 
   return (
     <div className={styles.container}>
-      {data.length > 0
-        ? data.map(({ name, image, description, price }, index) => (
-            <ProductCard
-              name={name}
-              description={description}
-              price={price}
-              type={type}
-              key={index}
-            />
-          ))
-        : "No products found"}
+      {data && data.length > 0 ? (
+        data.map(({ name, imageURL, description, price }, index) => (
+          <ProductCard
+            name={name}
+            description={description}
+            price={price}
+            type={type}
+            key={index}
+            image={imageURL}
+          />
+        ))
+      ) : (
+        <h1>No Products</h1>
+      )}
     </div>
   );
 }

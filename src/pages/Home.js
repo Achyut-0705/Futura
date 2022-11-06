@@ -27,7 +27,12 @@ function Home() {
             </h2>
           </div>
           <div className={styles.right}>
-            <CTA text="explore" onClick={() => navigate("/explore")} />
+            <CTA
+              text="explore"
+              onClick={() =>
+                navigate("/explore", { state: { activeState: "products" } })
+              }
+            />
           </div>
         </div>
       </div>
@@ -58,6 +63,9 @@ function Home() {
             width: "25%",
           }}
           text="BROWSE NEW BRANDS"
+          onClick={() =>
+            navigate("/explore", { state: { activeState: "brands" } })
+          }
         />
       </section>
 

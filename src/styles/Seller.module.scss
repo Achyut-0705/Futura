@@ -18,6 +18,11 @@
   gap: 4rem;
   h1 {
     font-size: 3em;
+    text-transform: capitalize;
+  }
+
+  & > p {
+    max-width: 60%;
   }
 }
 

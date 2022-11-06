@@ -24,7 +24,11 @@ function Login() {
     }
     try {
       const {
-        data: { token, is_admin },
+        data: {
+          token,
+          is_admin,
+          company: { id },
+        },
       } = await instance.post("auth/login/company", {
         email,
         password,
@@ -32,6 +36,7 @@ function Login() {
       success("Login successful");
       localStorage.setItem("token", token);
       localStorage.setItem("is_admin", is_admin);
+      localStorage.setItem("id", id);
       navigate("/seller/home");
     } catch (err) {
       if (err.message === "timeout of 3000ms exceeded") {

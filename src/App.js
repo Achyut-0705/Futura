@@ -9,8 +9,10 @@ import Register from "./pages/Register";
 import SellerHome from "./pages/seller/Home";
 import Logout from "./pages/Logout";
 import Explore from "./pages/Explore";
+import Brand from "./pages/Brand";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import { ToastContainer } from "react-toastify";
+// import CompanyPreview from "./pages/CompanyPreview";
 
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
         </Route>
 
         <Route path="/explore" element={<Explore />} />
+        {/* <Route path="/company/preview" element={<CompanyPreview />} /> */}
+
+        <Route path="/brand" element={<Brand />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </Router>

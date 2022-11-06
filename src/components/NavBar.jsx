@@ -8,6 +8,7 @@ function NavBar() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+
   return (
     <nav className={styles.container}>
       <div className={styles.logoWrapper}>
@@ -37,8 +38,8 @@ function NavBar() {
             />
             <NavItem
               title="Preview your landing page"
-              link="/seller/preview"
-              isActive={pathname.search("/seller/preview") !== -1}
+              link="/brand"
+              isActive={pathname.search("/brand") !== -1}
             />
             <NavItem
               title="Logout"

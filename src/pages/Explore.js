@@ -4,9 +4,15 @@ import { useState, useEffect } from "react";
 import ViewProducts from "../components/ViewProducts";
 import ViewBrands from "../components/ViewBrands";
 import instance from "../utils/axios";
+import { useLocation } from "react-router-dom";
 
 function Explore() {
-  const [activeBtn, setActiveBtn] = useState("brands");
+  const location = useLocation();
+  const [activeBtn, setActiveBtn] = useState(
+    location.state?.activeState || "brands"
+  );
+
+  console.log(location.state.activeState);
   const [data, setData] = useState([]);
 
   useEffect(() => {

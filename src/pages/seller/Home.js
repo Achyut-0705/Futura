@@ -9,6 +9,7 @@ import { error, info, success } from "../../utils/Toasties";
 import instance from "../../utils/axios";
 import ViewProducts from "../../components/ViewProducts";
 import AddProduct from "../../components/AddProduct";
+import { useEffect } from "react";
 // import axios from "axios";
 
 function Home() {
@@ -31,6 +32,8 @@ function Home() {
   const [description, setDescription] = useState("");
   const [product, setProduct] = useState(<ProductCard type="add" />);
   const inputRef = useRef(null);
+  const [company, setCompany] = useState(null);
+  const [products, setProducts] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,7 +66,7 @@ function Home() {
     setProduct(
       <ProductCard
         type="add"
-        image={image}
+        image={URL.createObjectURL(image)}
         name={name}
         price={price}
         description={description}
@@ -72,19 +75,52 @@ function Home() {
     );
   };
 
+  useEffect(() => {
+    const getCompanyData = async () => {
+      try {
+        const res = await instance.get("/company/token/company");
+        setCompany(res.data.company);
+        console.log(res.data.company);
+      } catch (err) {
+        error(err.message);
+        // console.log(err);
+      }
+    };
+    getCompanyData();
+  }, []);
+
+  useEffect(() => {
+    if (activeBtn !== "view") return;
+    const getProducts = async () => {
+      try {
+        const res = await instance.get(`/product/company/${company.id}`);
+        setProducts(res.data.products);
+        // console.log(res.data.products);
+      } catch (err) {
+        // error(err.message);
+        console.log(err);
+      }
+    };
+    getProducts();
+  }, [activeBtn]);
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.left}>
-          <img src={defaultBrandLogo} alt="brand logo" />
+          <img
+            src={`${
+              company && company.logoURL ? company.logoURL : defaultBrandLogo
+            }`}
+            alt="brand logo"
+          />
         </div>
         <div className={styles.right}>
-          <h1>DARJEELING TEA CO.</h1>
+          <h1>{company ? company.name : "DARJEELING TEA CO."}</h1>
           <p>
-            India's Only Tea Which Gurantees The Freshness of Freshly Pluched
-            Tea Leaves. Darjeeling Tea Brings You the Chai That Will Take You
-            Back To The Mountains Of Darjeeling. Find Top-Notch Products Made In
-            India Ethically To Start Your Morning Just The Way You Want!
+            {company && company.description
+              ? company.description
+              : "India's Only Tea Which Gurantees The Freshness of Freshly Pluched Tea Leaves. Darjeeling Tea Brings You the Chai That Will Take You Back To The Mountains Of Darjeeling. Find Top-Notch Products Made In India Ethically To Start Your Morning Just The Way You Want!"}
           </p>
         </div>
       </div>
@@ -124,7 +160,7 @@ function Home() {
             }}
           />
         ) : (
-          <ViewProducts />
+          <ViewProducts dataList={products} />
         )}
       </div>
     </>
